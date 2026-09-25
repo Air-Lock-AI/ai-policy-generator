@@ -1,7 +1,7 @@
 ---
 name: ai-policy-generator
 description: Generate a polished three-page AI Use Policy for the user's company. Researches the company and sector, drafts the full policy in chat for the user to validate, then writes a print-ready HTML file plus a sidecar JSON. Use when the user asks for an "AI policy", "AI use policy", "EU AI Act policy", "AI policy one-pager", or any request to draft, generate, or update a company AI governance policy. Aligned to EU AI Act Articles 4, 5 and 50.
-version: 1.3.1
+version: 1.4.0
 author: airlock
 license: airlock public use
 ---
