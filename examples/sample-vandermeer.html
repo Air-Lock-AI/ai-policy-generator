@@ -154,42 +154,32 @@ body{
 .foot .brand .wm{ font-family:var(--font-display); font-style:italic; font-size:9pt; color:var(--aurora-deep); }
 
 /* Cover */
-.sheet.cover{ padding:0; background:#0a0f1e; color:#eef0fb; height:297mm; min-height:297mm; overflow:hidden; }
+.sheet.cover{ padding:0; background:#171718; color:#f1eae0; height:297mm; min-height:297mm; overflow:hidden; }
 .cover-bg{ position:absolute; inset:0; z-index:0; overflow:hidden;
   background:
-    radial-gradient(ellipse 150mm 95mm at 50% 24%, rgba(129,140,248,.42) 0%, transparent 60%),
-    radial-gradient(ellipse 130mm 110mm at 6% 108%, rgba(99,102,241,.34) 0%, transparent 60%),
-    radial-gradient(ellipse 120mm 100mm at 104% 4%, rgba(150,165,250,.30) 0%, transparent 58%),
-    radial-gradient(ellipse 120mm 95mm at 100% 106%, rgba(249,140,90,.20) 0%, transparent 58%),
-    linear-gradient(155deg, #18213c 0%, #111729 52%, #0a0f1e 100%);
+    radial-gradient(205mm 215mm at 120% 46%, #ffffff 0%, #c9b6ff 24%, #5b86ff 56%, rgba(91,134,255,0) 80%),
+    #171718;
 }
-.cover-grid{ position:absolute; inset:0; z-index:1; opacity:.5;
-  background-image:linear-gradient(rgba(200,208,255,.10) 1px, transparent 1px), linear-gradient(90deg, rgba(200,208,255,.08) 1px, transparent 1px);
-  background-size:18mm 18mm, 18mm 18mm;
-  -webkit-mask-image:radial-gradient(ellipse 150mm 120mm at 50% 42%, #000 0%, transparent 78%);
-          mask-image:radial-gradient(ellipse 150mm 120mm at 50% 42%, #000 0%, transparent 78%);
-}
-.cover-vig{ position:absolute; inset:0; z-index:2; background:radial-gradient(ellipse 160mm 140mm at 50% 44%, transparent 50%, rgba(4,6,14,.58) 100%); }
 .cover-inner{ position:relative; z-index:3; height:100%; display:flex; flex-direction:column; padding:24mm 22mm 18mm; }
 .cover-top{ display:flex; align-items:center; gap:3.6mm; }
-.cover-top .pill{ width:6mm; height:13mm; display:block; overflow:visible; filter:drop-shadow(0 3mm 6mm rgba(4,6,14,.55)); }
-.cover-top .wm{ font-family:var(--font-display); font-size:19pt; color:#dfe3fb; letter-spacing:-.01em; }
-.cover-top .wm small{ font-family:var(--font-mono); font-style:normal; font-size:6.6pt; letter-spacing:.18em; text-transform:uppercase; color:#9aa3d8; display:block; margin-top:.4mm; }
+.cover-top .pill{ width:6mm; height:13mm; display:block; overflow:visible; filter:drop-shadow(0 3mm 6mm rgba(0,0,0,.5)); }
+.cover-top .wm{ font-family:var(--font-display); font-size:19pt; color:#f1eae0; letter-spacing:-.01em; }
+.cover-top .wm small{ font-family:var(--font-mono); font-style:normal; font-size:6.6pt; letter-spacing:.18em; text-transform:uppercase; color:#a9a29a; display:block; margin-top:.4mm; }
 .cover-hero{ flex:1 1 auto; display:flex; flex-direction:column; justify-content:center; }
-.cover-eyebrow{ font-family:var(--font-mono); font-size:8pt; letter-spacing:.26em; text-transform:uppercase; color:#a5b4fc; display:inline-flex; align-items:center; gap:9px; margin-bottom:8mm; }
+.cover-eyebrow{ font-family:var(--font-mono); font-size:8pt; letter-spacing:.26em; text-transform:uppercase; color:#c9b6ff; display:inline-flex; align-items:center; gap:9px; margin-bottom:8mm; }
 .cover-eyebrow::before{ content:""; width:24px; height:1px; background:currentColor; }
-.cover-title{ font-family:var(--font-display); font-weight:400; font-size:84pt; line-height:.94; letter-spacing:-.015em; color:#fff; margin:0; max-width:150mm; }
-.cover-title .accent{ color:#c7d0ff; }
-.cover-sub{ font-size:12pt; line-height:1.5; color:#c2c8ee; margin:9mm 0 0; max-width:130mm; }
-.cover-sub b{ color:#fff; font-weight:600; }
-.cover-org{ font-family:var(--font-mono); font-size:9pt; letter-spacing:.05em; color:#dfe3fb; margin:7mm 0 0; }
-.cover-org .dot{ color:#7f8ad0; padding:0 6px; }
+.cover-title{ font-family:var(--font-display); font-weight:400; font-size:84pt; line-height:.94; letter-spacing:-.015em; color:#f1eae0; margin:0; max-width:150mm; }
+.cover-title .accent{ color:#c9b6ff; }
+.cover-sub{ font-size:12pt; line-height:1.5; color:#ddd5c9; margin:9mm 0 0; max-width:130mm; }
+.cover-sub b{ color:#f1eae0; font-weight:600; }
+.cover-org{ font-family:var(--font-mono); font-size:9pt; letter-spacing:.05em; color:#f1eae0; margin:7mm 0 0; }
+.cover-org .dot{ color:#857f78; padding:0 6px; }
 .cover-foot{ position:relative; z-index:3; }
-.cover-meta{ display:grid; grid-template-columns:repeat(4,1fr); gap:6mm; border-top:1px solid rgba(200,208,255,.18); padding-top:6mm; }
-.cmeta .k{ font-family:var(--font-mono); font-size:6.4pt; letter-spacing:.16em; text-transform:uppercase; color:#8f99cf; margin-bottom:1.8mm; }
-.cmeta .v{ font-family:var(--font-mono); font-size:10pt; color:#fff; font-weight:500; }
+.cover-meta{ display:grid; grid-template-columns:repeat(4,1fr); gap:6mm; border-top:1px solid rgba(241,234,224,.16); padding-top:6mm; }
+.cmeta .k{ font-family:var(--font-mono); font-size:6.4pt; letter-spacing:.16em; text-transform:uppercase; color:#a9a29a; margin-bottom:1.8mm; }
+.cmeta .v{ font-family:var(--font-mono); font-size:10pt; color:#f1eae0; font-weight:500; }
 .cmeta .v.flare{ color:#fdba74; }
-.cover-classification{ position:absolute; top:24mm; right:22mm; z-index:3; font-family:var(--font-mono); font-size:7pt; letter-spacing:.14em; text-transform:uppercase; color:#c2c8ee; border:1px solid rgba(200,208,255,.3); border-radius:999px; padding:1.6mm 4mm; }
+.cover-classification{ position:absolute; top:24mm; right:22mm; z-index:3; font-family:var(--font-mono); font-size:7pt; letter-spacing:.14em; text-transform:uppercase; color:#ddd5c9; border:1px solid rgba(241,234,224,.26); border-radius:999px; padding:1.6mm 4mm; }
 
 @media print{
   /* Cover is full-bleed, no page margin. Empty margin boxes still claim the
@@ -249,7 +239,7 @@ body{
 .print-cta{
   position:fixed; top:18px; right:18px; z-index:9999;
   display:flex; align-items:center; gap:8px;
-  background:#0a0f1e; color:#fff; border:0; border-radius:999px;
+  background:#171718; color:#fff; border:0; border-radius:999px;
   padding:10px 16px 10px 14px; cursor:pointer;
   font-family:var(--font-sans); font-size:13px; font-weight:600;
   box-shadow:0 6px 18px -6px rgba(35,39,51,.45);
@@ -275,8 +265,6 @@ body{
   <div class="col">
     <section class="sheet cover" aria-label="AI policy cover">
       <div class="cover-bg"></div>
-      <div class="cover-grid"></div>
-      <div class="cover-vig"></div>
       <span class="cover-classification">Internal · Confidential</span>
 
       <div class="cover-inner">
