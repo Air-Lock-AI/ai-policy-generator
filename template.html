@@ -8,11 +8,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#f4f5f7; --paper-rise:#fafbfc; --paper-deep:#ecedf0;
-  --ink-900:#0b1220; --ink-800:#26303f; --ink-700:#1f2937; --ink-500:#4b5563; --ink-400:#6b7280; --ink-300:#9ca3af;
+  --paper:#f5f3ee; --paper-rise:#fbfaf7; --paper-deep:#ebe8e0;
+  --ink-900:#232733; --ink-800:#2e3340; --ink-700:#383d4a; --ink-500:#5c6270; --ink-400:#7d8391; --ink-300:#a2a8b3;
   --aurora-deep:#1e1b4b; --aurora-mid:#4f46e5; --aurora-bright:#6366f1; --aurora-light:#a5b4fc;
   --flare:#f97316; --flare-ink:#c2410c; --flare-soft:rgba(249,115,22,.10);
-  --hair:rgba(15,23,42,.10); --hair-soft:rgba(15,23,42,.07); --hair-strong:rgba(15,23,42,.16);
+  --hair:rgba(35,39,51,.10); --hair-soft:rgba(35,39,51,.07); --hair-strong:rgba(35,39,51,.16);
   --indigo-wash:rgba(79,70,229,.05);
   --font-sans:'Geist',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
   --font-mono:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
@@ -28,11 +28,11 @@ body{
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   -webkit-print-color-adjust:exact; print-color-adjust:exact;
-  background:#e9eaee;
+  background:var(--paper);
   background-image:
-    radial-gradient(ellipse 1200px 900px at 8% -8%, rgba(99,102,241,.16) 0%, transparent 58%),
-    radial-gradient(ellipse 800px 700px at 108% 95%, rgba(249,115,22,.08) 0%, transparent 58%),
-    radial-gradient(ellipse 700px 600px at 96% 30%, rgba(165,180,252,.18) 0%, transparent 58%);
+    radial-gradient(ellipse 1200px 900px at 8% -8%, rgba(99,102,241,.10) 0%, transparent 58%),
+    radial-gradient(ellipse 800px 700px at 108% 95%, rgba(236,210,189,.22) 0%, transparent 58%),
+    radial-gradient(ellipse 700px 600px at 96% 30%, rgba(165,180,252,.12) 0%, transparent 58%);
   background-attachment:fixed;
 }
 
@@ -45,7 +45,7 @@ body{
 .sheet{
   width:210mm; min-height:297mm;
   background:#ffffff;
-  box-shadow:0 30px 70px -28px rgba(15,23,42,.42), 0 8px 22px -14px rgba(15,23,42,.20);
+  box-shadow:0 30px 70px -28px rgba(35,39,51,.34), 0 8px 22px -14px rgba(35,39,51,.16);
   position:relative;
   padding:11mm 14mm 11mm;
   display:flex; flex-direction:column;
@@ -67,8 +67,8 @@ body{
 
 .mast-cont{ display:flex; justify-content:space-between; align-items:center; gap:8mm; padding-bottom:3mm; border-bottom:1px solid var(--hair); }
 .mast-cont .l{ display:flex; align-items:center; gap:2.6mm; }
-.mast-cont .l .orb{ width:6mm; height:6mm; display:block; }
-.mast-cont .l .nm{ font-family:var(--font-display); font-style:italic; font-size:12pt; color:var(--ink-900); }
+.mast-cont .l .pill{ width:2.9mm; height:6.3mm; display:block; overflow:visible; }
+.mast-cont .l .nm{ font-family:var(--font-display); font-size:12pt; color:var(--ink-900); }
 .mast-cont .l .sub{ font-family:var(--font-mono); font-size:6pt; letter-spacing:.16em; text-transform:uppercase; color:var(--aurora-mid); }
 .mast-cont .r{ font-family:var(--font-mono); font-size:6.8pt; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-400); }
 
@@ -76,7 +76,7 @@ body{
 .band:last-of-type{ border-bottom:0; }
 .band-tag{ display:flex; flex-direction:column; gap:1.8mm; }
 .band-num{ display:none; }
-.band-name{ font-family:var(--font-display); font-style:italic; font-size:16pt; line-height:1.04; color:var(--ink-900); }
+.band-name{ font-family:var(--font-display); font-size:16pt; line-height:1.04; color:var(--ink-900); }
 .band-hint{ font-family:var(--font-mono); font-size:6.2pt; letter-spacing:.08em; color:var(--ink-400); text-transform:uppercase; }
 
 .clauses{ display:flex; flex-direction:column; gap:3.1mm; }
@@ -124,7 +124,7 @@ body{
 .proh b{ font-weight:600; color:var(--ink-900); }
 
 .hl{ border:1px solid rgba(79,70,229,.22); border-radius:9px; background:var(--indigo-wash); padding:3.4mm 4.2mm; }
-.hl .big{ font-family:var(--font-display); font-style:italic; font-size:14.5pt; line-height:1.04; color:var(--aurora-deep); margin:0 0 1.6mm; }
+.hl .big{ font-family:var(--font-display); font-size:14.5pt; line-height:1.04; color:var(--aurora-deep); margin:0 0 1.6mm; }
 .hl p{ font-size:8.7pt; line-height:1.5; color:var(--ink-700); margin:0; }
 .hl p .lead{ color:var(--ink-500); }
 .hl b{ color:var(--ink-900); font-weight:600; }
@@ -149,19 +149,19 @@ body{
 .foot{ display:flex; justify-content:space-between; align-items:center; margin-top:3.4mm; padding-top:2.4mm; border-top:1px solid var(--hair-soft); }
 .foot .lhs{ font-family:var(--font-mono); font-size:6.6pt; letter-spacing:.05em; color:var(--ink-400); }
 .foot .brand{ display:flex; align-items:center; gap:2mm; }
-.foot .brand .orb{ width:4.4mm; height:4.4mm; display:block; }
+.foot .brand .pill{ width:2.2mm; height:4.8mm; display:block; overflow:visible; }
 .foot .brand .txt{ font-family:var(--font-mono); font-size:6.4pt; letter-spacing:.06em; color:var(--ink-400); }
 .foot .brand .wm{ font-family:var(--font-display); font-style:italic; font-size:9pt; color:var(--aurora-deep); }
 
 /* Cover */
-.sheet.cover{ padding:0; background:#161634; color:#eef0fb; height:297mm; min-height:297mm; overflow:hidden; }
+.sheet.cover{ padding:0; background:#0a0f1e; color:#eef0fb; height:297mm; min-height:297mm; overflow:hidden; }
 .cover-bg{ position:absolute; inset:0; z-index:0; overflow:hidden;
   background:
     radial-gradient(ellipse 150mm 95mm at 50% 24%, rgba(129,140,248,.42) 0%, transparent 60%),
     radial-gradient(ellipse 130mm 110mm at 6% 108%, rgba(99,102,241,.34) 0%, transparent 60%),
     radial-gradient(ellipse 120mm 100mm at 104% 4%, rgba(150,165,250,.30) 0%, transparent 58%),
     radial-gradient(ellipse 120mm 95mm at 100% 106%, rgba(249,140,90,.20) 0%, transparent 58%),
-    linear-gradient(155deg, #2a2f63 0%, #22244f 52%, #161634 100%);
+    linear-gradient(155deg, #18213c 0%, #111729 52%, #0a0f1e 100%);
 }
 .cover-grid{ position:absolute; inset:0; z-index:1; opacity:.5;
   background-image:linear-gradient(rgba(200,208,255,.10) 1px, transparent 1px), linear-gradient(90deg, rgba(200,208,255,.08) 1px, transparent 1px);
@@ -169,16 +169,16 @@ body{
   -webkit-mask-image:radial-gradient(ellipse 150mm 120mm at 50% 42%, #000 0%, transparent 78%);
           mask-image:radial-gradient(ellipse 150mm 120mm at 50% 42%, #000 0%, transparent 78%);
 }
-.cover-vig{ position:absolute; inset:0; z-index:2; background:radial-gradient(ellipse 160mm 140mm at 50% 44%, transparent 50%, rgba(8,9,26,.55) 100%); }
+.cover-vig{ position:absolute; inset:0; z-index:2; background:radial-gradient(ellipse 160mm 140mm at 50% 44%, transparent 50%, rgba(4,6,14,.58) 100%); }
 .cover-inner{ position:relative; z-index:3; height:100%; display:flex; flex-direction:column; padding:24mm 22mm 18mm; }
 .cover-top{ display:flex; align-items:center; gap:3.6mm; }
-.cover-top .orb{ width:11mm; height:11mm; display:block; filter:drop-shadow(0 3mm 6mm rgba(8,8,30,.5)); }
-.cover-top .wm{ font-family:var(--font-display); font-style:italic; font-size:19pt; color:#dfe3fb; letter-spacing:-.01em; }
+.cover-top .pill{ width:6mm; height:13mm; display:block; overflow:visible; filter:drop-shadow(0 3mm 6mm rgba(4,6,14,.55)); }
+.cover-top .wm{ font-family:var(--font-display); font-size:19pt; color:#dfe3fb; letter-spacing:-.01em; }
 .cover-top .wm small{ font-family:var(--font-mono); font-style:normal; font-size:6.6pt; letter-spacing:.18em; text-transform:uppercase; color:#9aa3d8; display:block; margin-top:.4mm; }
 .cover-hero{ flex:1 1 auto; display:flex; flex-direction:column; justify-content:center; }
 .cover-eyebrow{ font-family:var(--font-mono); font-size:8pt; letter-spacing:.26em; text-transform:uppercase; color:#a5b4fc; display:inline-flex; align-items:center; gap:9px; margin-bottom:8mm; }
 .cover-eyebrow::before{ content:""; width:24px; height:1px; background:currentColor; }
-.cover-title{ font-family:var(--font-display); font-style:italic; font-weight:400; font-size:84pt; line-height:.94; letter-spacing:-.015em; color:#fff; margin:0; max-width:150mm; }
+.cover-title{ font-family:var(--font-display); font-weight:400; font-size:84pt; line-height:.94; letter-spacing:-.015em; color:#fff; margin:0; max-width:150mm; }
 .cover-title .accent{ color:#c7d0ff; }
 .cover-sub{ font-size:12pt; line-height:1.5; color:#c2c8ee; margin:9mm 0 0; max-width:130mm; }
 .cover-sub b{ color:#fff; font-weight:600; }
@@ -249,10 +249,10 @@ body{
 .print-cta{
   position:fixed; top:18px; right:18px; z-index:9999;
   display:flex; align-items:center; gap:8px;
-  background:#0b1220; color:#fff; border:0; border-radius:999px;
+  background:#0a0f1e; color:#fff; border:0; border-radius:999px;
   padding:10px 16px 10px 14px; cursor:pointer;
   font-family:var(--font-sans); font-size:13px; font-weight:600;
-  box-shadow:0 6px 18px -6px rgba(15,23,42,.45);
+  box-shadow:0 6px 18px -6px rgba(35,39,51,.45);
   transition:transform .15s ease;
 }
 .print-cta:hover{ transform:translateY(-1px); }
@@ -281,14 +281,9 @@ body{
 
       <div class="cover-inner">
         <div class="cover-top">
-          <svg class="orb" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <defs>
-              <linearGradient id="cov-a" x1="8%" y1="6%" x2="96%" y2="100%"><stop offset="0%" stop-color="#1E1B4B"></stop><stop offset="34%" stop-color="#4F46E5"></stop><stop offset="66%" stop-color="#6366F1"></stop><stop offset="100%" stop-color="#A5B4FC"></stop></linearGradient>
-              <radialGradient id="cov-c" cx="42%" cy="40%" r="62%"><stop offset="0%" stop-color="#26254e"></stop><stop offset="68%" stop-color="#1a1838"></stop><stop offset="100%" stop-color="#121128"></stop></radialGradient>
-            </defs>
-            <circle cx="32" cy="32" r="30" fill="url(#cov-a)"></circle>
-            <circle cx="32" cy="32" r="18.5" fill="url(#cov-c)"></circle>
-            <circle cx="32" cy="32" r="30" fill="none" stroke="rgba(255,255,255,.16)" stroke-width="1"></circle>
+          <svg class="pill" viewBox="0 0 204 444" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs><linearGradient id="pill-cover" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#818cf8"></stop><stop offset=".4" stop-color="#a5b4fc"></stop><stop offset="1" stop-color="#ede9fe"></stop></linearGradient></defs>
+            <path fill="url(#pill-cover)" fill-rule="evenodd" d="M102 2a100 100 0 0 1 100 100v240a100 100 0 0 1-200 0V102A100 100 0 0 1 102 2Zm0 20a80 80 0 0 0-80 80v240a80 80 0 0 0 160 0V102a80 80 0 0 0-80-80Z"></path>
           </svg>
           <span class="wm">{{COMPANY}}<small>{{LEGAL_ENTITY}} · {{CITY}}</small></span>
         </div>
@@ -318,13 +313,9 @@ body{
 
       <header class="mast-cont">
         <div class="l">
-          <svg class="orb" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <defs>
-              <linearGradient id="rh2-a" x1="8%" y1="6%" x2="96%" y2="100%"><stop offset="0%" stop-color="#1E1B4B"></stop><stop offset="34%" stop-color="#4F46E5"></stop><stop offset="66%" stop-color="#6366F1"></stop><stop offset="100%" stop-color="#A5B4FC"></stop></linearGradient>
-              <radialGradient id="rh2-c" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ffffff"></stop><stop offset="78%" stop-color="#ffffff"></stop><stop offset="100%" stop-color="#ECEDF0"></stop></radialGradient>
-            </defs>
-            <circle cx="32" cy="32" r="29" fill="url(#rh2-a)"></circle>
-            <circle cx="32" cy="32" r="18" fill="url(#rh2-c)"></circle>
+          <svg class="pill" viewBox="0 0 204 444" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs><linearGradient id="pill-mast-2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4338ca"></stop><stop offset=".4" stop-color="#312e81"></stop><stop offset="1" stop-color="#1e1b4b"></stop></linearGradient></defs>
+            <path fill="url(#pill-mast-2)" fill-rule="evenodd" d="M102 2a100 100 0 0 1 100 100v240a100 100 0 0 1-200 0V102A100 100 0 0 1 102 2Zm0 20a80 80 0 0 0-80 80v240a80 80 0 0 0 160 0V102a80 80 0 0 0-80-80Z"></path>
           </svg>
           <span class="nm">{{LBL_DOC_TITLE}}</span>
           <span class="sub">· {{LBL_THE_RULES}}</span>
@@ -426,13 +417,9 @@ body{
       <div class="foot">
         <span class="lhs">{{LEGAL_ENTITY}} · {{COMPANY}} · ai-policy-v{{VERSION}} · {{LBL_PAGE}} 2 {{LBL_OF}} 3</span>
         <span class="brand">
-          <svg class="orb" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <defs>
-              <linearGradient id="oa-a1" x1="8%" y1="6%" x2="96%" y2="100%"><stop offset="0%" stop-color="#1E1B4B"></stop><stop offset="34%" stop-color="#4F46E5"></stop><stop offset="66%" stop-color="#6366F1"></stop><stop offset="100%" stop-color="#A5B4FC"></stop></linearGradient>
-              <radialGradient id="oa-c1" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ffffff"></stop><stop offset="78%" stop-color="#ffffff"></stop><stop offset="100%" stop-color="#ECEDF0"></stop></radialGradient>
-            </defs>
-            <circle cx="32" cy="32" r="29" fill="url(#oa-a1)"></circle>
-            <circle cx="32" cy="32" r="18" fill="url(#oa-c1)"></circle>
+          <svg class="pill" viewBox="0 0 204 444" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs><linearGradient id="pill-foot-2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4338ca"></stop><stop offset=".4" stop-color="#312e81"></stop><stop offset="1" stop-color="#1e1b4b"></stop></linearGradient></defs>
+            <path fill="url(#pill-foot-2)" fill-rule="evenodd" d="M102 2a100 100 0 0 1 100 100v240a100 100 0 0 1-200 0V102A100 100 0 0 1 102 2Zm0 20a80 80 0 0 0-80 80v240a80 80 0 0 0 160 0V102a80 80 0 0 0-80-80Z"></path>
           </svg>
           <span class="txt">{{LBL_BUILT_WITH}}</span><span class="wm">airlock</span>
         </span>
@@ -446,13 +433,9 @@ body{
 
       <header class="mast-cont">
         <div class="l">
-          <svg class="orb" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <defs>
-              <linearGradient id="rh-a" x1="8%" y1="6%" x2="96%" y2="100%"><stop offset="0%" stop-color="#1E1B4B"></stop><stop offset="34%" stop-color="#4F46E5"></stop><stop offset="66%" stop-color="#6366F1"></stop><stop offset="100%" stop-color="#A5B4FC"></stop></linearGradient>
-              <radialGradient id="rh-c" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ffffff"></stop><stop offset="78%" stop-color="#ffffff"></stop><stop offset="100%" stop-color="#ECEDF0"></stop></radialGradient>
-            </defs>
-            <circle cx="32" cy="32" r="29" fill="url(#rh-a)"></circle>
-            <circle cx="32" cy="32" r="18" fill="url(#rh-c)"></circle>
+          <svg class="pill" viewBox="0 0 204 444" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs><linearGradient id="pill-mast-3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4338ca"></stop><stop offset=".4" stop-color="#312e81"></stop><stop offset="1" stop-color="#1e1b4b"></stop></linearGradient></defs>
+            <path fill="url(#pill-mast-3)" fill-rule="evenodd" d="M102 2a100 100 0 0 1 100 100v240a100 100 0 0 1-200 0V102A100 100 0 0 1 102 2Zm0 20a80 80 0 0 0-80 80v240a80 80 0 0 0 160 0V102a80 80 0 0 0-80-80Z"></path>
           </svg>
           <span class="nm">{{LBL_DOC_TITLE}}</span>
           <span class="sub">· {{LBL_THE_DUTIES}}</span>
@@ -554,13 +537,9 @@ body{
       <div class="foot">
         <span class="lhs">{{LEGAL_ENTITY}} · {{COMPANY}} · ai-policy-v{{VERSION}} · {{LBL_PAGE}} 3 {{LBL_OF}} 3</span>
         <span class="brand">
-          <svg class="orb" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <defs>
-              <linearGradient id="ob-a" x1="8%" y1="6%" x2="96%" y2="100%"><stop offset="0%" stop-color="#1E1B4B"></stop><stop offset="34%" stop-color="#4F46E5"></stop><stop offset="66%" stop-color="#6366F1"></stop><stop offset="100%" stop-color="#A5B4FC"></stop></linearGradient>
-              <radialGradient id="ob-c" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ffffff"></stop><stop offset="78%" stop-color="#ffffff"></stop><stop offset="100%" stop-color="#ECEDF0"></stop></radialGradient>
-            </defs>
-            <circle cx="32" cy="32" r="29" fill="url(#ob-a)"></circle>
-            <circle cx="32" cy="32" r="18" fill="url(#ob-c)"></circle>
+          <svg class="pill" viewBox="0 0 204 444" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs><linearGradient id="pill-foot-3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4338ca"></stop><stop offset=".4" stop-color="#312e81"></stop><stop offset="1" stop-color="#1e1b4b"></stop></linearGradient></defs>
+            <path fill="url(#pill-foot-3)" fill-rule="evenodd" d="M102 2a100 100 0 0 1 100 100v240a100 100 0 0 1-200 0V102A100 100 0 0 1 102 2Zm0 20a80 80 0 0 0-80 80v240a80 80 0 0 0 160 0V102a80 80 0 0 0-80-80Z"></path>
           </svg>
           <span class="txt">{{LBL_BUILT_WITH}}</span><span class="wm">airlock</span>
         </span>

@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.4.0 — 2026-09-25
+- Brand 2.0: the pill replaces the orb as the mark, on the cover, both running headers and both footers (the orb is Brand 1.x and per `brand-2.0/README` gets no new usage)
+- Brand 2.0 palette: warm paper (`#f5f3ee`) and slate ink (`#232733`) instead of the cool grey ramp, on the screen surround, the hairlines and the shadows
+- The cover field is now the Brand 2.0 ink `#0a0f1e`; the aurora stays only as an atmosphere wash behind it, never as a full-page gradient
+- Instrument Serif Italic is the wordmark and nothing else: the cover title, band names, pull quotes and the company name are now the roman. The only italic left is "airlock" in the footer, matching the site
+
 ## 1.3.1 — 2026-06-22
 - Added a canonical-text reference in `SKILL.md` so the chat draft mirrors the HTML output word for word, no more freelanced clauses
 - Operating principle now explicitly forbids rephrasing or expanding fixed clause text
