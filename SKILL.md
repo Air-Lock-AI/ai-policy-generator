@@ -31,7 +31,9 @@ The user opens the HTML, presses Cmd/Ctrl+P, and saves to PDF. See "Step 7" for 
 
 ## Files in this skill
 
-- `template.html` — the policy template with `{{PLACEHOLDER}}` markers
+- `template.html` — the policy template with `{{PLACEHOLDER}}` markers, in airlock Brand 2.0 (noir cover, chalk pages, the pill mark, Instrument Serif roman headings; italic is the airlock wordmark only)
+
+When the skill runs from airlock, these files are skill attachments: load them with `read_skill_attachment` by filename instead of from a folder.
 - `i18n/en.json`, `i18n/nl.json`, `i18n/fr.json`, `i18n/de.json` — translation packs for the static policy text
 - `examples/sample-vandermeer.html` and `examples/sample-vandermeer-inputs.json` — a fictional filled example for reference
 
@@ -418,8 +420,8 @@ If the user replies with edits ("change the CEO to X", "drop the deepfake clause
 
 Once approved:
 
-1. Load `template.html` from this skill folder.
-2. Load `i18n/{lang}.json` for the chosen language.
+1. Load `template.html` from this skill folder (or the `template.html` skill attachment).
+2. Load `i18n/{lang}.json` for the chosen language (or the `{lang}.json` attachment).
 3. Do a literal string-replace of every `{{PLACEHOLDER}}` with the resolved value. Render the tools-register rows and the house-rules list as inline HTML (see "HTML fragment patterns" below).
 4. If a proxy was named (Q2), use that name in the register row instead of `airlock`. If no proxy, omit the proxy row entirely and adjust the standfirst sentence above the register.
 5. Compute the slug: `lowercase(company)`, strip non-alphanumerics, hyphens for spaces.

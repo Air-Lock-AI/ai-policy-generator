@@ -72,7 +72,7 @@ ai-policy-generator-skill/
 
 Three A4 pages by default:
 
-- **Cover** — dark indigo hero, company identity, version, effective and review dates, classification
+- **Cover** — noir hero with the airlock pill (Brand 2.0), company identity, version, effective and review dates, classification
 - **The rules** — Purpose & scope, Three duties (Train / Stay on list / Report), Banned full stop (Article 5 plus house rules), Data tier matrix, Approved tools register, optional Annex III addendum
 - **The duties** — Transparency, Accountability, Confidentiality and IP, Incidents same business day, Sanctions, Where to ask, Acknowledgement and review
 
@@ -100,7 +100,7 @@ The skill never quotes a regulator it didn't verify in the research step. Unknow
 
 ## Status
 
-Version 1.3.1. Stable for production use.
+Version 1.4.0. Stable for production use.
 
 ## License
 
