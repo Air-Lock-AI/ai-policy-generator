@@ -1,7 +1,7 @@
 ---
 name: ai-policy-generator
 description: Generate a polished three-page AI Use Policy for the user's company. Researches the company and sector, drafts the full policy in chat for the user to validate, then writes a print-ready HTML file plus a sidecar JSON. Use when the user asks for an "AI policy", "AI use policy", "EU AI Act policy", "AI policy one-pager", or any request to draft, generate, or update a company AI governance policy. Aligned to EU AI Act Articles 4, 5 and 50.
-version: 1.3.1
+version: 1.4.0
 author: airlock
 license: airlock public use
 ---
@@ -31,18 +31,18 @@ The user opens the HTML, presses Cmd/Ctrl+P, and saves to PDF. See "Step 7" for 
 
 ## Files in this skill
 
-- `template.html` — the policy template with `{{PLACEHOLDER}}` markers, in airlock Brand 2.0 (noir cover, chalk pages, the pill mark, Instrument Serif roman headings; italic is the airlock wordmark only)
+- `assets/template.html` — the policy template with `{{PLACEHOLDER}}` markers, in airlock Brand 2.0 (noir cover, chalk pages, the pill mark, Instrument Serif roman headings; italic is the airlock wordmark only)
 
 When the skill runs from airlock, these files are skill attachments: load them with `read_skill_attachment` by filename instead of from a folder.
-- `i18n/en.json`, `i18n/nl.json`, `i18n/fr.json`, `i18n/de.json` — translation packs for the static policy text
-- `examples/sample-vandermeer.html` and `examples/sample-vandermeer-inputs.json` — a fictional filled example for reference
+- `assets/i18n/en.json`, `assets/i18n/nl.json`, `assets/i18n/fr.json`, `assets/i18n/de.json` — translation packs for the static policy text
+- `assets/examples/sample-vandermeer.html` and `assets/examples/sample-vandermeer-inputs.json` — a fictional filled example for reference
 
 ## Operating principle
 
 **Ask everything first, then draft, then validate, then generate.** Three rules:
 
 1. **Zero placeholders in the chat draft.** Anything you'd otherwise mark `[ to confirm ]` must be asked of the user before you write the draft. Asking small questions upfront is better than handing the user a draft full of gaps. Only acceptable inline marker is `[ to appoint ]` for DPO when the user explicitly chose it.
-2. **The chat draft must mirror the HTML output, word for word on fixed text.** The clause body text is canonical (defined in `i18n/` and `template.html`); do not freelance, rephrase, expand, or invent new sentences. Your job is to substitute the user's variables into the canonical text and present that. If the chat draft promises content the HTML doesn't render, the user's approval is meaningless.
+2. **The chat draft must mirror the HTML output, word for word on fixed text.** The clause body text is canonical (defined in `assets/i18n/` and `assets/template.html`); do not freelance, rephrase, expand, or invent new sentences. Your job is to substitute the user's variables into the canonical text and present that. If the chat draft promises content the HTML doesn't render, the user's approval is meaningless.
 3. **Generate the HTML only after explicit user approval** ("approve", "go", "looks good").
 
 **Do not assume the user's stack.** The two most common wrong assumptions to avoid:
@@ -102,7 +102,7 @@ Before drafting, the following decisions change the **shape** of the document, n
 >
 > Options: English, Dutch, French, German.
 
-Defaults to English. The skill ships `i18n/en|nl|fr|de.json`.
+Defaults to English. The skill ships `assets/i18n/en|nl|fr|de.json`.
 
 ### Q2 — AI governance / proxy layer
 
@@ -300,7 +300,7 @@ Hold this draft in working memory. **Do not write any files yet.**
 
 ## Step 6 — Present the FULL draft in chat for validation
 
-**Critical rule: the chat draft must be a faithful preview of what the HTML will actually render. Do not freelance, rephrase, expand, or invent new clause text.** The clause body text is fixed in `i18n/{lang}.json` and `template.html`. Your job is to substitute the user's variables into the canonical text below and present the result. If you find yourself writing a fuller, prosier version because it "reads better", stop — the user will approve it, then open the PDF, and find different (shorter) text. That breaks trust.
+**Critical rule: the chat draft must be a faithful preview of what the HTML will actually render. Do not freelance, rephrase, expand, or invent new clause text.** The clause body text is fixed in `assets/i18n/{lang}.json` and `assets/template.html`. Your job is to substitute the user's variables into the canonical text below and present the result. If you find yourself writing a fuller, prosier version because it "reads better", stop — the user will approve it, then open the PDF, and find different (shorter) text. That breaks trust.
 
 The user-customisable parts are: standfirst, scope description, house rules list, tools register rows, sector addendum clause (if any), DPO informer note (if any), enforcement sentence in clause 9, and contact details. **Everything else is canonical.**
 
@@ -420,8 +420,8 @@ If the user replies with edits ("change the CEO to X", "drop the deepfake clause
 
 Once approved:
 
-1. Load `template.html` from this skill folder (or the `template.html` skill attachment).
-2. Load `i18n/{lang}.json` for the chosen language (or the `{lang}.json` attachment).
+1. Load `assets/template.html` from this skill folder (or the `assets/template.html` skill attachment).
+2. Load `assets/i18n/{lang}.json` for the chosen language (or the `assets/i18n/{lang}.json` attachment).
 3. Do a literal string-replace of every `{{PLACEHOLDER}}` with the resolved value. Render the tools-register rows and the house-rules list as inline HTML (see "HTML fragment patterns" below).
 4. If a proxy was named (Q2), use that name in the register row instead of `airlock`. If no proxy, omit the proxy row entirely and adjust the standfirst sentence above the register.
 5. Compute the slug: `lowercase(company)`, strip non-alphanumerics, hyphens for spaces.

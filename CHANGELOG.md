@@ -8,6 +8,7 @@
 - Fixed a stray space before the comma in clause 10 (nl, fr)
 - Content pages print on white so no white frame shows around a chalk sheet
 - SKILL.md: when run from airlock, load template and language packs as skill attachments
+- Runtime files moved under `assets/` (`assets/template.html`, `assets/i18n/`, `assets/examples/`) so airlock's GitHub skill sync imports them
 
 ## 1.3.1 — 2026-06-22
 - Added a canonical-text reference in `SKILL.md` so the chat draft mirrors the HTML output word for word, no more freelanced clauses

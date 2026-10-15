@@ -31,7 +31,7 @@ ln -s "$(pwd)" ~/.claude/skills/ai-policy-generator
 ln -s "$(pwd)" "$HOME/Library/Application Support/Claude/skills/ai-policy-generator"
 ```
 
-Trigger as above. The skill reads `template.html` and `i18n/{lang}.json` at runtime.
+Trigger as above. The skill reads `assets/template.html` and `assets/i18n/{lang}.json` at runtime.
 
 ## What's in this repo
 
@@ -42,16 +42,23 @@ ai-policy-generator-skill/
 ├── CHANGELOG.md                 # version history
 ├── build.sh                     # zips the directory into ai-policy-generator.skill
 ├── SKILL.md                     # the skill instructions (read by Claude at runtime)
-├── template.html                # the policy template with {{PLACEHOLDER}} markers
-├── i18n/
-│   ├── en.json                  # English string pack
-│   ├── nl.json                  # Dutch
-│   ├── fr.json                  # French
-│   └── de.json                  # German
-└── examples/
-    ├── sample-vandermeer-inputs.json   # fictional filled example (inputs)
-    └── sample-vandermeer.html          # fictional filled example (rendered)
+└── assets/                      # everything the skill loads at runtime
+    ├── template.html            # the policy template with {{PLACEHOLDER}} markers
+    ├── i18n/
+    │   ├── en.json              # English string pack
+    │   ├── nl.json              # Dutch
+    │   ├── fr.json              # French
+    │   └── de.json              # German
+    └── examples/
+        ├── sample-vandermeer-inputs.json   # fictional filled example (inputs)
+        └── sample-vandermeer.html          # fictional filled example (rendered)
 ```
+
+Runtime files live under `assets/` because airlock's GitHub skill sync imports only `.md` files and files under `scripts/`, `references/` or `assets/`.
+
+## Sync with airlock
+
+The airlock organization syncs this repo as a skill: Control Room → Skills → Manage GitHub syncs. It imports `main` on connect, nightly at 02:30 UTC, and on "Sync now". Edit the skill here, not in airlock: a sync overwrites the airlock copy.
 
 ## The flow
 
@@ -80,7 +87,7 @@ Content can grow beyond three pages. A JS splitter in the template automatically
 
 ## Languages
 
-English, Dutch, French, German. The static policy text lives in `i18n/{lang}.json`. Each language pack covers all clause headings, fixed clause text, the Article 5 prohibition list, and the default house rules. Variables (company name, contacts, tools register, addendum content) are substituted at render time.
+English, Dutch, French, German. The static policy text lives in `assets/i18n/{lang}.json`. Each language pack covers all clause headings, fixed clause text, the Article 5 prohibition list, and the default house rules. Variables (company name, contacts, tools register, addendum content) are substituted at render time.
 
 ## Print
 
